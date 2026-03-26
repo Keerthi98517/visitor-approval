@@ -62,8 +62,9 @@
           }
         })
       })
-      .then(() => {
-        showMessage('Visit has been ' + action + '! Security team has been notified.', 'success');
+     .then(data => {
+  showMessage(JSON.stringify(data), 'success');
+
         document.querySelector('.btn-approve').disabled = true;
         document.querySelector('.btn-reject').disabled = true;
       })
