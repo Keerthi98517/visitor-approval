@@ -65,10 +65,7 @@
      
 .then(data => {
   showMessage(JSON.stringify(data), 'success');
-})
-.catch(error => {
-  showMessage('Error: ' + error. message, 'error');
-})
+
         document.querySelector('.btn-approve').disabled = true;
         document.querySelector('.btn-reject').disabled = true;
       })
