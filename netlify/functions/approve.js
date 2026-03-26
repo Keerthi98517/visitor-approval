@@ -2,17 +2,14 @@ exports.handler = async function(event, context) {
   const refNum = event.queryStringParameters.refNum;
   const action = event.queryStringParameters.action;
   
-  const apiURL = "https://www.zohoapis.in/creator/custom/admin_pacedigitek/process_visitor_approval?public_key=8xJTrKj9bKGAyOaPqhZ6rGBDK&refNum=" + refNum + "&action=" + action;
+  const apiURL = "https://www.zohoapis.in/creator/custom/admin_pacedigitek/process_visitor_approval?zapikey=8xJTrKj9bKGAyOaPqhZ6rGBDK&refNum=" + refNum + "&action=" + action;
   
   try {
     const response = await fetch(apiURL, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
+      method: "GET"
     });
     
-    const data = await response.json();
+    const text = await response.text();
     
     return {
       statusCode: 200,
@@ -20,7 +17,7 @@ exports.handler = async function(event, context) {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(data)
+      body: text
     };
   } catch(error) {
     return {
