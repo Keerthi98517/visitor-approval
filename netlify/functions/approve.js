@@ -2,7 +2,7 @@ exports.handler = async function(event, context) {
   const refNum = event.queryStringParameters.refNum;
   const action = event.queryStringParameters.action;
   
-  const apiURL = "https://www.zohoapis.in/creator/custom/admin_pacedigitek/process_visitor_approval?zapikey=8xJTrKj9bKGAyOaPqhZ6rGBDK&refNum=" + refNum + "&action=" + action;
+  const apiURL = "https://www.zohoapis.in/creator/custom/admin_pacedigitek/process_visitor_approval?zapikey=1UN7ynmh9TgY84mgMWbH2QXqx&refNum=" + refNum + "&action=" + action;
   
   try {
     const response = await fetch(apiURL, {
